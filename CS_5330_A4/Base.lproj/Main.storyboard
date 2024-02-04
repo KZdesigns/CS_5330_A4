@@ -1,24 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CS_5330_A4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pm-image" translatesAutoresizingMaskIntoConstraints="NO" id="UXI-Qo-KNM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="n52-xt-q6F" userLabel="MainStackView">
+                                <rect key="frame" x="47" y="167.66666666666666" width="320" height="420.66666666666674"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wed, 28 Dec 2022 14:59:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRF-ix-t95">
+                                        <rect key="frame" x="11.666666666666657" y="0.0" width="296.66666666666674" height="26.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5WT-uJ-CFa">
+                                        <rect key="frame" x="0.0" y="66.333333333333343" width="320" height="216.00000000000003"/>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9a-Uv-oHi">
+                                        <rect key="frame" x="33.666666666666671" y="322.33333333333337" width="252.66666666666663" height="36.666666666666686"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Start Timer / Stop Music" cornerStyle="capsule">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="TimerMusicBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Azf-YG-VUe"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Remaining: 00:10:15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOl-KY-xGI">
+                                        <rect key="frame" x="48.666666666666686" y="399" width="223" height="21.666666666666686"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UXI-Qo-KNM" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="5Qs-ca-dbp"/>
+                            <constraint firstItem="UXI-Qo-KNM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Uiw-Nm-WJ1"/>
+                            <constraint firstItem="n52-xt-q6F" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="UqM-P6-1v2"/>
+                            <constraint firstItem="n52-xt-q6F" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="eda-69-mgX"/>
+                            <constraint firstItem="UXI-Qo-KNM" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="gEC-Yh-NAR"/>
+                            <constraint firstItem="UXI-Qo-KNM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lwj-GL-iGP"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="BackgroundImage" destination="UXI-Qo-KNM" id="jum-FL-1ou"/>
+                        <outlet property="DatePicker" destination="5WT-uJ-CFa" id="Bn4-iK-6Px"/>
+                        <outlet property="TimeRemaining" destination="eOl-KY-xGI" id="xpb-lr-3Ft"/>
+                        <outlet property="TimerMusicButton" destination="n9a-Uv-oHi" id="RnK-Ou-gOV"/>
+                        <outlet property="dateTimeLabel" destination="oRF-ix-t95" id="ROx-z5-MGG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="112.5" y="-2.112676056338028"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pm-image" width="103.33333587646484" height="168.66667175292969"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
